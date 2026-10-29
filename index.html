@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memora — Import Your Memories to Apple Photos</title>
+<meta name="description" content="Import your official Snapchat Memories export into Apple Photos with the original dates, locations and a verified completion report. No login. No cloud upload.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-lock" viewBox="0 0 24 24"><path d="M 2 11 C 0.895 11 0 10.105 0 9 L 0 2 C 0 0.895 0.895 0 2 0 L 16 0 C 17.105 0 18 0.895 18 2 L 18 9 C 18 10.105 17.105 11 16 11 Z" transform="translate(3 11)"/><path d="M 0 9 L 0 5 C 0 2.239 2.239 0 5 0 C 7.761 0 10 2.239 10 5 L 10 9" transform="translate(7 2)"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M 16 0 L 5 11 L 0 6" transform="translate(4 6)"/></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><path d="M 0 10 C 0 4.477 4.477 0 10 0 C 15.523 0 20 4.477 20 10 C 20 15.523 15.523 20 10 20 C 4.477 20 0 15.523 0 10 Z" transform="translate(2 2)"/><path d="M 0 2 L 2 4 L 6 0" transform="translate(9 10)"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><path d="M 0 3 C 0 1.343 4.029 0 9 0 C 13.971 0 18 1.343 18 3 C 18 4.657 13.971 6 9 6 C 4.029 6 0 4.657 0 3 Z" transform="translate(3 2)"/><path d="M 0 0 L 0 14 C 0 15.657 4.029 17 9 17 C 13.971 17 18 15.657 18 14 L 18 0" transform="translate(3 5)"/><path d="M 0 0 C 0 1.657 4.029 3 9 3 C 13.971 3 18 1.657 18 0" transform="translate(3 12)"/></symbol>
+<symbol id="i-cloud-off" viewBox="0 0 24 24"><path d="M 0 0 L 20 20" transform="translate(2 2)"/><path d="M 3.786 0 C 0.917 1.483 -0.565 4.736 0.199 7.874 C 0.963 11.011 3.774 13.219 7.004 13.218 L 15.504 13.218 C 15.946 13.218 16.387 13.153 16.811 13.025" transform="translate(1.996 5.782)"/><path d="M 11.532 11.43 C 12.224 10.035 12.146 8.381 11.325 7.058 C 10.504 5.735 9.057 4.93 7.5 4.93 L 5.71 4.93 C 4.929 2.315 2.701 0.391 0 0" transform="translate(10 5.07)"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><path d="M 2 14 C 0.895 14 0 13.105 0 12 L 0 2 C 0 0.895 0.895 0 2 0 L 12 0 C 13.105 0 14 0.895 14 2 L 14 12 C 14 13.105 13.105 14 12 14 Z" transform="translate(8 8)"/><path d="M 2 14 C 0.9 14 0 13.1 0 12 L 0 2 C 0 0.9 0.9 0 2 0 L 12 0 C 13.1 0 14 0.9 14 2" transform="translate(2 2)"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M 0 12 L 0 0" transform="translate(12 3)"/><path d="M 18 0 L 18 4 C 18 5.105 17.105 6 16 6 L 2 6 C 0.895 6 0 5.105 0 4 L 0 0" transform="translate(3 15)"/><path d="M 0 0 L 5 5 L 10 0" transform="translate(7 10)"/></symbol>
+<symbol id="i-files" viewBox="0 0 24 24"><path d="M 6 0 C 6.53 0 7.039 0.211 7.414 0.586 L 11.414 4.586 C 11.789 4.961 12 5.47 12 6 L 12 13 C 12 14.105 11.105 15 10 15 L 2 15 C 0.895 15 0 14.105 0 13 L 0 2 C 0 0.895 0.895 0 2 0 Z" transform="translate(9 2)"/><path d="M 0 0 L 0 4 C 0 5.105 0.895 6 2 6 L 6 6" transform="translate(15 2)"/><path d="M 2 0 C 0.895 0 0 0.895 0 2 L 0 13 C 0 14.105 0.895 15 2 15 L 10 15 C 10.715 15 11.375 14.619 11.732 14" transform="translate(3 7)"/></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M 16 10.997 C 16 15.997 12.5 18.497 8.34 19.947 C 8.122 20.021 7.886 20.017 7.67 19.937 C 3.5 18.497 0 15.997 0 10.997 L 0 3.997 C 0 3.445 0.448 2.997 1 2.997 C 3 2.997 5.5 1.797 7.24 0.277 C 7.678 -0.097 8.322 -0.097 8.76 0.277 C 10.51 1.807 13 2.997 15 2.997 C 15.552 2.997 16 3.445 16 3.997 Z" transform="translate(4 2.003)"/><path d="M 0 2 L 2 4 L 6 0" transform="translate(9 10)"/></symbol>
+<symbol id="i-archive-restore" viewBox="0 0 24 24"><path d="M 1 5 C 0.448 5 0 4.552 0 4 L 0 1 C 0 0.448 0.448 0 1 0 L 19 0 C 19.552 0 20 0.448 20 1 L 20 4 C 20 4.552 19.552 5 19 5 Z" transform="translate(2 3)"/><path d="M 0 0 L 0 11 C 0 12.105 0.895 13 2 13 L 4 13" transform="translate(4 8)"/><path d="M 4 0 L 4 11 C 4 12.105 3.105 13 2 13 L 0 13" transform="translate(16 8)"/><path d="M 0 3 L 3 0 L 6 3" transform="translate(9 12)"/><path d="M 0 0 L 0 9" transform="translate(12 12)"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M 16 8 C 16 12.993 10.461 18.193 8.601 19.799 C 8.245 20.067 7.755 20.067 7.399 19.799 C 5.539 18.193 0 12.993 0 8 C 0 3.582 3.582 0 8 0 C 12.418 0 16 3.582 16 8" transform="translate(4 2)"/><path d="M 0 3 C 0 1.343 1.343 0 3 0 C 4.657 0 6 1.343 6 3 C 6 4.657 4.657 6 3 6 C 1.343 6 0 4.657 0 3 Z" transform="translate(9 7)"/></symbol>
+<symbol id="i-file-video" viewBox="0 0 24 24"><path d="M 0 20 L 14 20 C 15.105 20 16 19.105 16 18 L 16 5 L 11 0 L 2 0 C 0.895 0 0 0.895 0 2 L 0 6" transform="translate(4 2)"/><path d="M 0 0 L 0 4 C 0 5.105 0.895 6 2 6 L 6 6" transform="translate(14 2)"/><path d="M 1 6 C 0.448 6 0 5.552 0 5 L 0 1 C 0 0.448 0.448 0 1 0 L 7 0 C 7.552 0 8 0.448 8 1 L 8 5 C 8 5.552 7.552 6 7 6 Z" transform="translate(2 12)"/><path d="M 0 1.841 L 3.033 0.086 C 3.233 -0.029 3.479 -0.029 3.678 0.087 C 3.878 0.202 4 0.416 4 0.646 L 4 5.35 C 4 5.581 3.878 5.794 3.678 5.909 C 3.479 6.025 3.233 6.025 3.033 5.91 L 0 4.155" transform="translate(10 12.002)"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M 1 18 C 0.448 18 0 17.552 0 17 L 0 1 C 0 0.448 0.448 0 1 0 L 4 0 C 4.552 0 5 0.448 5 1 L 5 17 C 5 17.552 4.552 18 4 18 Z" transform="translate(14 3)"/><path d="M 1 18 C 0.448 18 0 17.552 0 17 L 0 1 C 0 0.448 0.448 0 1 0 L 4 0 C 4.552 0 5 0.448 5 1 L 5 17 C 5 17.552 4.552 18 4 18 Z" transform="translate(5 3)"/></symbol>
+<symbol id="i-circle-check-big" viewBox="0 0 24 24"><path d="M 19.799 8.004 C 20.74 12.622 18.328 17.271 14.01 19.161 C 9.692 21.051 4.641 19.67 1.886 15.845 C -0.869 12.021 -0.579 6.792 2.581 3.295 C 5.742 -0.202 10.915 -1.017 14.998 1.339" transform="translate(2.002 1.996)"/><path d="M 0 7 L 3 10 L 13 0" transform="translate(9 4)"/></symbol>
+<symbol id="i-images" viewBox="0 0 24 24"><path d="M 11 2.006 L 9.704 0.71 C 9.253 0.256 8.64 0 8 0 C 7.36 0 6.747 0.256 6.296 0.71 L 0 7.006" transform="translate(11 8.994)"/><path d="M 2 0 C 0.895 0 0 0.895 0 2 L 0 12 C 0 13.105 0.895 14 2 14 L 12 14 C 13.105 14 14 13.105 14 12" transform="translate(2 8)"/><path d="M 0 1 C 0 0.448 0.448 0 1 0 C 1.552 0 2 0.448 2 1 C 2 1.552 1.552 2 1 2 C 0.448 2 0 1.552 0 1 Z" transform="translate(12 6)" fill="var(--1m973uw, rgb(0,0,0))"/><path d="M 2 14 C 0.895 14 0 13.105 0 12 L 0 2 C 0 0.895 0.895 0 2 0 L 12 0 C 13.105 0 14 0.895 14 2 L 14 12 C 14 13.105 13.105 14 12 14 Z" transform="translate(8 2)"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M 0 0 L 6 6 L 12 0" transform="translate(6 9)"/></symbol>
+</svg>
+
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Memora home"><span class="brand__mark">M</span><span class="brand__name">Memora</span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="btn btn--primary nav__cta">Coming Soon</span>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero card-border">
+      <div class="hero__copy">
+        <p class="eyebrow">Every Memory. Correct Date. Verified.</p>
+        <h1>Leave Snapchat without leaving your memories.</h1>
+        <p class="lead">Import your official Memories export into Apple Photos with the original dates, locations and a verified completion report.</p>
+        <div class="hero__actions">
+          <span class="btn btn--primary">Coming Soon</span>
+          <a class="btn btn--secondary" href="#how-it-works">See How It Works</a>
+        </div>
+        <p class="hero__note"><svg class="ic ic--16" aria-hidden="true"><use href="#i-lock"/></svg>No login. No cloud upload. Your memories stay on your device.</p>
+      </div>
+
+      <div class="phone" aria-label="Memora import report preview">
+        <div class="phone__screen">
+          <div class="phone__head"><span class="phone__app">Memora</span><span class="pill"><svg class="ic ic--12" aria-hidden="true"><use href="#i-check"/></svg>Complete</span></div>
+          <p class="phone__title">Import complete</p>
+          <div class="bignum"><strong>12,482</strong><span>Memories found</span></div>
+          <dl class="phone__rows">
+            <div><dt>Successfully imported</dt><dd>12,482</dd></div>
+            <div><dt>Failed</dt><dd>0</dd></div>
+            <div><dt>Original dates restored</dt><dd><svg class="ic ic--16" aria-hidden="true"><use href="#i-circle-check"/></svg></dd></div>
+          </dl>
+          <div class="phone__album card-border"><svg class="apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.6c-.02-2.27 1.85-3.36 1.94-3.42-1.06-1.55-2.7-1.76-3.28-1.78-1.4-.14-2.73.82-3.44.82-.71 0-1.8-.8-2.96-.78-1.52.02-2.93.89-3.71 2.25-1.58 2.75-.4 6.82 1.14 9.05.75 1.09 1.65 2.32 2.82 2.27 1.13-.05 1.56-.73 2.93-.73 1.37 0 1.75.73 2.95.71 1.22-.02 1.99-1.11 2.73-2.21.86-1.27 1.22-2.5 1.24-2.56-.03-.01-2.37-.91-2.4-3.62zM14.12 5.94c.62-.76 1.04-1.81.93-2.86-.9.04-1.99.6-2.63 1.35-.58.67-1.08 1.74-.95 2.77 1 .08 2.03-.51 2.65-1.26z"/></svg><span>Memora album created · Verified</span></div>
+        </div>
+      </div>
+    </section>
+
+    <ul class="trust">
+      <li class="card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-lock"/></svg><span>No Snapchat login</span></li><li class="card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-database"/></svg><span>100% local processing</span></li><li class="card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-cloud-off"/></svg><span>No private media uploads</span></li><li class="card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-copy"/></svg><span>Duplicate protection</span></li>
+    </ul>
+
+    <section class="section" id="how-it-works">
+      <header class="section__head">
+        <p class="eyebrow">A clear path home</p>
+        <h2>From export to Apple Photos.</h2>
+        <p class="section__sub">A guided, local process designed to make a large library feel manageable.</p>
+      </header>
+      <ol class="steps">
+        <li class="step card-border"><span class="step__num">01</span><svg class="ic ic--24" aria-hidden="true"><use href="#i-download"/></svg><h3>Download your official export</h3><p>Request and download your official data export directly from Snapchat.</p></li><li class="step card-border"><span class="step__num">02</span><svg class="ic ic--24" aria-hidden="true"><use href="#i-files"/></svg><h3>Select your ZIP files</h3><p>Choose one or multiple export files from the Files app.</p></li><li class="step card-border"><span class="step__num">03</span><svg class="ic ic--24" aria-hidden="true"><use href="#i-shield-check"/></svg><h3>Review the preflight scan</h3><p>Memora checks photos, videos, dates, locations and missing files before importing.</p></li><li class="step card-border"><span class="step__num">04</span><svg class="ic ic--24" aria-hidden="true"><use href="#i-circle-check"/></svg><h3>Import and verify</h3><p>Your memories are imported into Apple Photos and checked for completeness.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" id="features">
+      <header class="section__head">
+        <p class="eyebrow">Made for memory libraries</p>
+        <h2>Import with context intact.</h2>
+        <p class="section__sub">The details that make a photo library feel like your own stay connected to every memory.</p>
+      </header>
+      <div class="features">
+        <article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-archive-restore"/></svg><h3>Original dates restored</h3><p>Memories appear in the correct place in your photo timeline.</p></article><article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-map-pin"/></svg><h3>Locations preserved</h3><p>Available GPS information is restored whenever possible.</p></article><article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-file-video"/></svg><h3>Photos and videos</h3><p>Import both image and video memories from your official export.</p></article><article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-copy"/></svg><h3>Duplicate protection</h3><p>Previously imported memories are detected before another copy is created.</p></article><article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-pause"/></svg><h3>Pause and resume</h3><p>Continue an interrupted import without starting from the beginning.</p></article><article class="feature card-border"><svg class="ic ic--24" aria-hidden="true"><use href="#i-circle-check-big"/></svg><h3>Verified completion</h3><p>Compare the source export with the completed import.</p></article>
+      </div>
+    </section>
+
+    <section class="split preflight">
+      <div class="split__copy">
+        <p class="eyebrow">Before you touch your library</p>
+        <h2>Know what’s there before you import.</h2>
+        <p class="lead">Memora checks your export before making changes to your photo library.</p>
+        <p class="note card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-shield-check"/></svg>Review before import: no changes are made during this scan.</p>
+      </div>
+      <div class="panel card-border">
+        <div class="panel__head"><p>Export analysis</p><span class="pill"><svg class="ic ic--12" aria-hidden="true"><use href="#i-check"/></svg>Ready</span></div>
+        <div class="bignum bignum--panel"><strong>12,482</strong><span>Memories found</span></div>
+        <div class="metrics"><div class="metric"><strong>10,241</strong><span>photos</span></div><div class="metric"><strong>2,241</strong><span>videos</span></div><div class="metric"><strong>2015–2026</strong><span>date range</span></div><div class="metric"><strong>9,341</strong><span>with location</span></div><div class="metric"><strong>12,482</strong><span>files available</span></div><div class="metric"><strong>0</strong><span>missing</span></div></div>
+      </div>
+    </section>
+
+    <section class="verify">
+      <div class="split__copy">
+        <p class="eyebrow eyebrow--light">Verified completion</p>
+        <h2>Nothing left behind.</h2>
+        <p class="lead">After the import, Memora compares what was found with what was successfully added to Apple Photos.</p>
+        <span class="verify__status card-border"><svg class="ic ic--22" aria-hidden="true"><use href="#i-circle-check-big"/></svg>Verified ✓</span>
+      </div>
+      <div class="panel panel--report card-border">
+        <div class="panel__head"><p>Import report</p><span class="pill"><svg class="ic ic--12" aria-hidden="true"><use href="#i-check"/></svg>Verified</span></div>
+        <div class="metrics metrics--report"><div class="metric"><strong>12,482</strong><span>found</span></div><div class="metric"><strong>12,482</strong><span>successfully imported</span></div><div class="metric"><strong>0</strong><span>failed</span></div><div class="metric"><strong>182</strong><span>duplicates prevented</span></div><div class="metric"><strong>12,482</strong><span>dates restored</span></div><div class="metric"><strong>8,324</strong><span>locations restored</span></div></div>
+        <div class="album card-border"><svg class="ic ic--18" aria-hidden="true"><use href="#i-images"/></svg><span>Album created</span></div>
+      </div>
+    </section>
+
+    <section class="privacy card-border" id="privacy">
+      <div class="split__copy">
+        <p class="eyebrow">Privacy-first by design</p>
+        <h2>Your memories never leave your iPhone.</h2>
+        <p class="lead">Memora is designed around local processing. Your private photos and videos are not uploaded to Memora servers. The app does not require a Memora account, a Snapchat login or access to your Snapchat password.</p>
+        <a class="textlink" href="/privacy">Read the full Privacy Policy</a>
+      </div>
+      <ul class="principles card-border">
+        <li><svg class="ic ic--18" aria-hidden="true"><use href="#i-circle-check"/></svg>No user account</li><li><svg class="ic ic--18" aria-hidden="true"><use href="#i-circle-check"/></svg>No Snapchat credentials</li><li><svg class="ic ic--18" aria-hidden="true"><use href="#i-circle-check"/></svg>No cloud media processing</li><li><svg class="ic ic--18" aria-hidden="true"><use href="#i-circle-check"/></svg>No sale of personal media</li><li><svg class="ic ic--18" aria-hidden="true"><use href="#i-circle-check"/></svg>Local import and verification</li>
+      </ul>
+    </section>
+
+    <p class="notice card-border"><svg class="ic ic--22" aria-hidden="true"><use href="#i-shield-check"/></svg><span>Memora is an independent application and is not affiliated with, endorsed by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.</span></p>
+
+    <section class="section faq" id="faq">
+      <header class="section__head">
+        <p class="eyebrow">Helpful details</p>
+        <h2>Questions, answered.</h2>
+        <p class="section__sub section__sub--muted">Clear answers on data access, importing and what to expect at launch.</p>
+      </header>
+      <div class="faq__list">
+        <div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>Does Memora require my Snapchat password?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>No. Memora works with the official data export you download from Snapchat. It never asks for your Snapchat login or password.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>Are my photos or videos uploaded anywhere?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>No. Everything is processed locally on your iPhone. Your private photos and videos are not uploaded to Memora servers.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Will original dates be preserved?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Yes. Memora restores the original capture dates, so your memories appear in the correct place in your Apple Photos timeline.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Does Memora import videos?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Yes. Memora imports both photo and video memories from your official export.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>What happens if an import is interrupted?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>You can continue an interrupted import without starting from the beginning. Memories that were already imported are skipped.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span>Will importing the same export twice create duplicates?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>No. Memora uses available identifiers, metadata and fingerprints to detect previously processed memories.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span>Is Memora affiliated with Snapchat?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p>No. Memora is an independent application and is not affiliated with, endorsed by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.</p></div></div></div><div class="faq__item card-border"><h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span>When will Memora be available?</span><svg class="ic ic--18 faq__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></h3><div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p>Memora is coming soon to the App Store. Check back here for launch updates.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="cta card-border">
+      <p class="eyebrow">Memora</p>
+      <h2>Your memories belong to you.</h2>
+      <p class="section__sub">Move them safely. Keep their original story.</p>
+      <span class="btn btn--primary">Coming Soon</span>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__company">
+      <a class="brand" href="#top" aria-label="Memora home"><span class="brand__mark">M</span><span class="brand__name">Memora</span></a>
+      <address>Creamole Limited · Business Registration Number: 79900605<br>Room 6A, 7/F, Block B, Grand Industrial Building<br>159–165 Wo Yi Hop Road, Kwai Chung<br>New Territories, Hong Kong</address>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/support">Support</a>
+      <a href="/legal">Legal Notice</a>
+      <a href="/contact">Contact</a>
+      <a href="mailto:support@memora.app">support@memora.app</a>
+    </nav>
+  </div>
+  <p class="footer__disc">Memora is an independent application and is not affiliated with, endorsed by, or sponsored by Snap Inc. Snapchat is a trademark of Snap Inc.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
